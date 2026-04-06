@@ -1,11 +1,12 @@
 Name:           zfsbootmenu
 Version:        3.1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Boot loader to boot from root file systems in zfs
 
 License:        MIT
 URL:            https://github.com/zbm-dev/zfsbootmenu
 Source0:        https://github.com/zbm-dev/zfsbootmenu/archive/refs/tags/v%{version}.tar.gz
+Patch0:         no-quiet.patch
 
 BuildArch:      noarch
 
@@ -27,7 +28,8 @@ If ZFSBootMenu is launched via EFI, then this package is probably not
 needed to install. This package would be required for booting via BIOS.
 
 %prep
-%autosetup -n zfsbootmenu-%{version}
+# https://rpm-software-management.github.io/rpm/manual/autosetup.html
+%autosetup -v -p1 -n zfsbootmenu-%{version}
 
 %build
 # Nothing to do
@@ -70,5 +72,8 @@ chmod +x %{buildroot}/usr/lib/initcpio/*/zfsbootmenu
 
 %changelog
 # LC_ALL=C date +'* %a %b %d %Y Håkon Løvdal <kode@denkule.no> - 3.1.x-1'
+* Mon Apr 06 2026 Håkon Løvdal <kode@denkule.no> - 3.1.0-2
+- Remove quiet kernel parameter.
+
 * Mon Apr 06 2026 Håkon Løvdal <kode@denkule.no> - 3.1.0-1
 - Initial package
