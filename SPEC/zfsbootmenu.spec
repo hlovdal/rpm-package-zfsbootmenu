@@ -11,8 +11,10 @@ BuildArch:      noarch
 
 Requires:       dracut kexec-tools zfs
 Requires:       coreutils findutils binutils util-linux-core
-Requires:       gawk make perl
+Requires:       gawk perl
 Requires:       bash glibc ncurses
+
+BuildRequires: make
 
 %description
 ZFSBootMenu is a Linux bootloader that attempts to provide an experience
