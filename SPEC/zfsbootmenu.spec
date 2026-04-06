@@ -1,6 +1,6 @@
 Name:           zfsbootmenu
 Version:        3.1.0
-Release:        0.1%{?dist}
+Release:        1%{?dist}
 Summary:        Boot loader to boot from root file systems in zfs
 
 License:        MIT
@@ -69,6 +69,6 @@ chmod +x %{buildroot}/usr/lib/initcpio/*/zfsbootmenu
 /usr/share/zfsbootmenu/*
 
 %changelog
-# LC_ALL=C date +'* %a %b %d %Y Håkon Løvdal <kode@denkule.no> - 3.1.x-0.1'
-* Mon Apr 06 2026 Håkon Løvdal <kode@denkule.no> - 3.1.0-0.1
+# LC_ALL=C date +'* %a %b %d %Y Håkon Løvdal <kode@denkule.no> - 3.1.x-1'
+* Mon Apr 06 2026 Håkon Løvdal <kode@denkule.no> - 3.1.0-1
 - Initial package
